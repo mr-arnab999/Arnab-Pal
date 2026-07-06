@@ -1,19 +1,20 @@
-# Arnab Pal
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-Computer Science & Technology Student
+# Run and deploy your AI Studio app
 
-## About Me
-I am passionate about AI, Full Stack Development, and Software Development.
+This contains everything you need to run your app locally.
 
-## Skills
-- HTML
-- CSS
-- JavaScript
-- React
-- TypeScript
-- Python
+View your app in AI Studio: https://ai.studio/apps/2ed8fa42-d293-4322-9d95-67d22f6c5beb
 
-## Contact
-- Email: your-mrarnab861@gmail.com
-- LinkedIn:https://www.linkedin.com/in/arnab-pal-5b3bb141b?utm_source=share_via&utm_content=profile&utm_medium=member_android
-- GitHub: https://github.com/arnab-git282
+## Run Locally
+
+**Prerequisites:**  Node.js
+
+
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

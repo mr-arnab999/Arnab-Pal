@@ -4,8 +4,17 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 relative bg-slate-900/20 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section id="contact" className="py-24 relative bg-[#030712] border-t border-white/5 overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute bottom-0 left-1/4 w-[40rem] h-[40rem] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+
+      <motion.div 
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-100px" }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="max-w-7xl mx-auto px-6 lg:px-12"
+      >
         <div className="mb-16 md:text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -30,38 +39,38 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
           >
             <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full glass flex items-center justify-center shrink-0 text-cyan-400">
-                  <Mail className="w-5 h-5" />
+              <div className="flex items-start gap-6 group cursor-pointer">
+                <div className="w-14 h-14 rounded-full glass border border-white/10 flex items-center justify-center shrink-0 text-cyan-400 group-hover:bg-cyan-500/20 group-hover:scale-110 transition-all duration-300 box-neon-glow">
+                  <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1">Email</h4>
-                  <a href={`mailto:${PERSONAL_INFO.email}`} className="text-slate-400 hover:text-white transition-colors">
+                  <h4 className="text-xl font-display font-bold mb-1 text-white">Email</h4>
+                  <a href={`mailto:${PERSONAL_INFO.email}`} className="text-slate-400 hover:text-cyan-400 transition-colors">
                     {PERSONAL_INFO.email}
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full glass flex items-center justify-center shrink-0 text-cyan-400">
-                  <Phone className="w-5 h-5" />
+              <div className="flex items-start gap-6 group cursor-pointer">
+                <div className="w-14 h-14 rounded-full glass border border-white/10 flex items-center justify-center shrink-0 text-cyan-400 group-hover:bg-cyan-500/20 group-hover:scale-110 transition-all duration-300 box-neon-glow">
+                  <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1">Phone</h4>
-                  <a href={`tel:${PERSONAL_INFO.phone}`} className="text-slate-400 hover:text-white transition-colors">
+                  <h4 className="text-xl font-display font-bold mb-1 text-white">Phone</h4>
+                  <a href={`tel:${PERSONAL_INFO.phone}`} className="text-slate-400 hover:text-cyan-400 transition-colors">
                     {PERSONAL_INFO.phone}
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full glass flex items-center justify-center shrink-0 text-cyan-400">
-                  <MapPin className="w-5 h-5" />
+              <div className="flex items-start gap-6 group cursor-pointer">
+                <div className="w-14 h-14 rounded-full glass border border-white/10 flex items-center justify-center shrink-0 text-cyan-400 group-hover:bg-cyan-500/20 group-hover:scale-110 transition-all duration-300 box-neon-glow">
+                  <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1">Location</h4>
-                  <p className="text-slate-400">{PERSONAL_INFO.location}</p>
+                  <h4 className="text-xl font-display font-bold mb-1 text-white">Location</h4>
+                  <p className="text-slate-400 group-hover:text-cyan-400 transition-colors">{PERSONAL_INFO.location}</p>
                 </div>
               </div>
             </div>
@@ -70,12 +79,12 @@ export default function Contact() {
               href="https://www.google.com/maps/place/Mankanali,+West+Bengal+722133/@23.3246809,87.038734,16z/data=!3m1!4b1!4m6!3m5!1s0x39f7a841486c0441:0xb2f1325e7d62f84!8m2!3d23.3261753!4d87.0361917!16s%2Fg%2F1hhx18b8j?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-12 w-full h-64 glass-card rounded-2xl overflow-hidden flex items-center justify-center relative group block"
+              className="mt-12 w-full h-64 glass-card-premium rounded-[2rem] overflow-hidden flex items-center justify-center relative group block border border-white/5"
             >
-              <div className="absolute inset-0 bg-slate-800/50 group-hover:bg-slate-800/80 transition-colors"></div>
-              <div className="relative z-10 flex flex-col items-center text-slate-400 group-hover:text-cyan-400 transition-colors">
-                <MapPin className="w-8 h-8 mb-2" />
-                <span className="font-medium">Open in Google Maps</span>
+              <div className="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/60 transition-colors duration-500"></div>
+              <div className="relative z-10 flex flex-col items-center text-slate-400 group-hover:text-cyan-400 transition-colors duration-300">
+                <MapPin className="w-10 h-10 mb-3 group-hover:scale-110 transition-transform duration-500" />
+                <span className="font-bold tracking-wide uppercase text-sm">Open in Google Maps</span>
               </div>
             </a>
           </motion.div>
@@ -83,47 +92,47 @@ export default function Contact() {
           <motion.form
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="glass-card p-8 rounded-3xl flex flex-col gap-6"
+            viewport={{ once: true, margin: "-100px" }}
+            className="glass-card-premium p-10 rounded-[2.5rem] flex flex-col gap-6"
             onSubmit={(e) => e.preventDefault()}
           >
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">Full Name</label>
+            <div className="group">
+              <label htmlFor="name" className="block text-sm font-mono tracking-wider uppercase text-slate-400 mb-2 group-focus-within:text-cyan-400 transition-colors">Full Name</label>
               <input 
                 type="text" 
                 id="name" 
-                className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+                className="w-full bg-slate-950/40 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all box-neon-glow-focus"
                 placeholder="John Doe"
               />
             </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+            <div className="group">
+              <label htmlFor="email" className="block text-sm font-mono tracking-wider uppercase text-slate-400 mb-2 group-focus-within:text-cyan-400 transition-colors">Email Address</label>
               <input 
                 type="email" 
                 id="email" 
-                className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+                className="w-full bg-slate-950/40 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all box-neon-glow-focus"
                 placeholder="john@example.com"
               />
             </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">Message</label>
+            <div className="group flex-1 flex flex-col">
+              <label htmlFor="message" className="block text-sm font-mono tracking-wider uppercase text-slate-400 mb-2 group-focus-within:text-cyan-400 transition-colors">Message</label>
               <textarea 
                 id="message" 
-                rows={5}
-                className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none"
+                className="w-full flex-1 bg-slate-950/40 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none box-neon-glow-focus min-h-[150px]"
                 placeholder="Tell me about your project..."
               ></textarea>
             </div>
             <button 
               type="submit"
-              className="mt-4 flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-xl font-medium transition-colors"
+              className="group relative mt-2 flex items-center justify-center gap-2 bg-cyan-500 text-slate-950 px-8 py-5 rounded-2xl font-bold transition-all hover:bg-cyan-400 box-neon-glow overflow-hidden"
             >
-              Send Message
-              <Send className="w-4 h-4" />
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              <span className="relative z-10">Send Message</span>
+              <Send className="w-5 h-5 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
           </motion.form>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

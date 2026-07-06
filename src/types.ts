@@ -22,6 +22,7 @@ export interface ExperienceItem {
   date: string;
   description: string;
   type: 'work' | 'education';
+  link?: string;
 }
 
 export interface Service {

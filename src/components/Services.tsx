@@ -11,7 +11,13 @@ const iconMap: Record<string, any> = {
 export default function Services() {
   return (
     <section id="services" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <motion.div 
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-100px" }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="max-w-7xl mx-auto px-6 lg:px-12"
+      >
         <div className="mb-16 md:text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +62,7 @@ export default function Services() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
