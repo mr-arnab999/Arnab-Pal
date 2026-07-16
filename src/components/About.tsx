@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { PERSONAL_INFO } from '../data';
+import profileImg from '../assets/images/Arnab.jpg';
 
 const Counter = ({ value, label }: { value: string, label: string }) => (
   <motion.div 
@@ -60,9 +61,11 @@ export default function About() {
             >
               <div className="w-full h-full rounded-[1.5rem] overflow-hidden relative">
                 <img 
-                  src="/Arnab.jpg" 
-                  alt="Portrait" 
-                  className="relative z-10 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 ease-out"
+                  src={profileImg} 
+                  alt="Portrait"
+                  loading="lazy"
+                  decoding="async"
+                  className="relative z-10 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 ease-out will-change-transform"
                 />
               </div>
             </motion.div>

@@ -100,9 +100,11 @@ export default function Projects() {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out will-change-transform"
                   />
-                  <div className="absolute top-4 right-4 z-20 flex gap-2 translate-y-[-150%] group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <div className="absolute top-4 right-4 z-20 flex gap-2 md:translate-y-[-150%] md:group-hover:translate-y-0 transition-transform duration-500 ease-out">
                     <a 
                       href={project.github}
                       className="w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:bg-cyan-500 hover:text-slate-950 transition-colors box-neon-glow"

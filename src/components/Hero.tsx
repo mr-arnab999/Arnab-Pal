@@ -9,7 +9,7 @@ const FloatingParticles = () => {
       {[...Array(30)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full box-neon-glow"
+          className="absolute w-1 h-1 bg-cyan-400 rounded-full box-neon-glow will-change-transform"
           initial={{
             x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
             y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
@@ -36,16 +36,16 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Gradients */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 will-change-transform">
         <motion.div 
           animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[10%] left-[5%] w-[40rem] h-[40rem] bg-cyan-600/10 rounded-full blur-[120px]" 
+          className="absolute top-[10%] left-[5%] w-[40rem] h-[40rem] bg-cyan-600/10 rounded-full blur-[120px] will-change-transform" 
         />
         <motion.div 
           animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[10%] right-[5%] w-[35rem] h-[35rem] bg-indigo-600/10 rounded-full blur-[120px]" 
+          className="absolute bottom-[10%] right-[5%] w-[35rem] h-[35rem] bg-indigo-600/10 rounded-full blur-[120px] will-change-transform" 
         />
       </div>
 
@@ -61,7 +61,7 @@ export default function Hero() {
         >
           {/* Smooth animated background circle behind the main content */}
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] md:w-[50rem] md:h-[50rem] bg-cyan-500/20 rounded-full blur-[100px] pointer-events-none -z-10"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] md:w-[50rem] md:h-[50rem] bg-cyan-500/20 rounded-full blur-[100px] pointer-events-none -z-10 will-change-transform"
             animate={{ 
               scale: [1, 1.2, 1],
               opacity: [0.4, 0.7, 0.4]
@@ -100,7 +100,7 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Building Modern Web Experiences with AI & Full-Stack Development.
+            Building Modern Web Experiences with AI & Learning Full-Stack Development.
           </motion.p>
 
           <motion.div 
@@ -111,18 +111,18 @@ export default function Hero() {
           >
             <a 
               href="#projects" 
-              className="group relative flex items-center gap-2 bg-cyan-500 text-slate-950 px-8 py-4 rounded-full font-bold hover:bg-cyan-400 transition-all w-full sm:w-auto justify-center box-neon-glow overflow-hidden"
+              className="group relative flex items-center gap-2 bg-cyan-500 text-slate-950 px-6 py-3 text-sm rounded-full font-bold hover:bg-cyan-400 transition-all w-full sm:w-auto justify-center box-neon-glow overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative z-10">View Projects</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
             </a>
             <a 
               href="/resume.pdf" 
-              className="group flex items-center gap-2 glass px-8 py-4 rounded-full font-medium text-white hover:border-cyan-500/50 hover:bg-cyan-900/20 transition-all w-full sm:w-auto justify-center overflow-hidden relative"
+              className="group flex items-center gap-2 glass px-6 py-3 text-sm rounded-full font-medium text-white hover:border-cyan-500/50 hover:bg-cyan-900/20 transition-all w-full sm:w-auto justify-center overflow-hidden relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-indigo-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <Download className="w-5 h-5 relative z-10 group-hover:-translate-y-1 transition-transform" />
+              <Download className="w-4 h-4 relative z-10 group-hover:-translate-y-1 transition-transform" />
               <span className="relative z-10">Download CV</span>
             </a>
           </motion.div>
@@ -138,9 +138,9 @@ export default function Hero() {
       >
         <span className="text-xs text-slate-500 uppercase tracking-widest">Scroll</span>
         <motion.div 
-          animate={{ height: ["0%", "100%", "0%"], y: [0, 0, 48] }}
+          animate={{ scaleY: [0, 1, 0], y: [0, 0, 48] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-[1px] h-12 bg-gradient-to-b from-cyan-500 to-transparent origin-top"
+          className="w-[1px] h-12 bg-gradient-to-b from-cyan-500 to-transparent origin-top will-change-transform"
         />
       </motion.div>
     </section>

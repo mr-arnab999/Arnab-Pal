@@ -51,9 +51,9 @@ const TechCore = () => {
           const angle = (i / 6) * Math.PI * 2;
           const radius = 3.5;
           return (
-            <Box 
-              key={`ring1-${i}`} 
-              args={[0.3, 0.3, 0.3]} 
+            <Box
+              key={`ring1-${i}`}
+              args={[0.3, 0.3, 0.3]}
               position={[Math.cos(angle) * radius, Math.sin(angle) * radius, 0]}
             >
               <meshStandardMaterial color="#06b6d4" emissive="#06b6d4" emissiveIntensity={0.8} wireframe={i % 2 === 0} />
@@ -68,9 +68,9 @@ const TechCore = () => {
           const angle = (i / 4) * Math.PI * 2;
           const radius = 5;
           return (
-            <Box 
-              key={`ring2-${i}`} 
-              args={[0.4, 0.4, 0.4]} 
+            <Box
+              key={`ring2-${i}`}
+              args={[0.4, 0.4, 0.4]}
               position={[Math.cos(angle) * radius, 0, Math.sin(angle) * radius]}
             >
               <meshStandardMaterial color="#3b82f6" emissive="#3b82f6" emissiveIntensity={0.6} wireframe={i % 2 !== 0} />
@@ -84,8 +84,8 @@ const TechCore = () => {
 
 export default function Hero3D() {
   return (
-    <div className="absolute inset-0 z-0 opacity-50 pointer-events-none mix-blend-screen">
-      <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
+    <div className="absolute inset-0 z-0 opacity-50 pointer-events-none mix-blend-screen will-change-transform">
+      <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 1.5]} performance={{ min: 0.5 }}>
         <fog attach="fog" args={['#030712', 5, 15]} />
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 10]} intensity={2} color="#06b6d4" />

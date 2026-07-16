@@ -26,18 +26,26 @@ export const SKILLS: Skill[] = [
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    title: "Student - Computer Science And Technology",
+    title: "Diploma-Computer Science and Technology",
     company: "Sir Rajendra Nath Mukherjee Government Polytechnic",
-    date: "2023 - PRESENT",
-    description: "Studying Computer Science and Technology.",
+    date: "2023 - 2026",
+    description: "CGPA 8.2",
     type: "education",
     link: "https://www.google.com/maps/place/Sir+Rajendra+Nath+Mukherjee+govt.+Polytechnic+(Basirhat+Govt.+Polytechnic+College)/@22.650491,88.8499476,17z/data=!4m14!1m7!3m6!1s0x39ff55c586aebcf7:0x974aabb4007664d0!2sSir+Rajendra+Nath+Mukherjee+govt.+Polytechnic+(Basirhat+Govt.+Polytechnic+College)!8m2!3d22.650491!4d88.8525225!16s%2Fg%2F11df0lvqcq!3m5!1s0x39ff55c586aebcf7:0x974aabb4007664d0!8m2!3d22.650491!4d88.8525225!16s%2Fg%2F11df0lvqcq?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+  },
+  {
+    title: "1-Year Diploma in Computer Application",
+    company: "Rajiv Gandhi Computer Center, Bankura",
+    date: "2023 - 2024",
+    description: "95.5% score",
+    type: "education",
+    link: "https://www.google.com/maps/place/Rajiv+Gandhi+computer+center/@23.2415808,87.0624861,18.29z/data=!4m15!1m8!3m7!1s0x39f7a5f670544fef:0x2ece3b11aac256f!2sPratap+Bagan,+Bankura,+West+Bengal+722101!3b1!8m2!3d23.2423937!4d87.0641023!16s%2Fg%2F11b6bq3w2n!3m5!1s0x39f7a57798f7fc3f:0xf2b7b39cab579170!8m2!3d23.2406389!4d87.062605!16s%2Fg%2F11lllp8_wb?entry=ttu&g_ep=EgoyMDI2MDcxMy4wIKXMDSoASAFQAw%3D%3D"
   },
   {
     title: "Secondary Education",
     company: "Mankanali High School",
     date: "2018 - 2023",
-    description: "Nothing to yet",
+    description: "75.4% score",
     type: "education",
     link: "https://www.google.com/maps/place/Mankanali+High+School/@23.3285623,87.042359,17z/data=!4m14!1m7!3m6!1s0x39f7a84027dd67e9:0x2c76cfcf4db0ead1!2sMankanali+High+School!8m2!3d23.3285623!4d87.042359!16s%2Fg%2F11c53rn63_!3m5!1s0x39f7a84027dd67e9:0x2c76cfcf4db0ead1!8m2!3d23.3285623!4d87.042359!16s%2Fg%2F11c53rn63_?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
   }

@@ -145,3 +145,7 @@ html.lenis, html.lenis body {
   animation: text-color-cycle 3s linear infinite;
 }
 
+.will-change-transform {
+  will-change: transform;
+  transform: translateZ(0);
+}

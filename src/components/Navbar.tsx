@@ -17,12 +17,30 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <>
@@ -36,7 +54,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
           <a href="#" className="font-display font-bold text-2xl tracking-tighter text-white">
-            {PERSONAL_INFO.name}<span className="text-cyan-400">.</span>
+            My Portfolio<span className="text-cyan-400">.</span>
           </a>
 
           {/* Desktop Nav */}
@@ -52,7 +70,9 @@ export default function Navbar() {
                 </a>
               ))}
             </div>
+            
             <div className="h-4 w-[1px] bg-white/20"></div>
+
             <div className="flex items-center gap-4">
               <a href={PERSONAL_INFO.github} className="text-slate-400 hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
               <a href={PERSONAL_INFO.linkedin} className="text-slate-400 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>

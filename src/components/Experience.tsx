@@ -72,7 +72,7 @@ export default function Experience() {
                   ) : (
                     <div className="text-indigo-300 font-medium mb-4">{item.company}</div>
                   )}
-                  <p className="text-slate-400 leading-relaxed text-sm">
+                  <p className="text-slate-400 leading-relaxed text-sm font-bold">
                     {item.description}
                   </p>
                 </div>

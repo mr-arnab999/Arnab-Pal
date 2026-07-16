@@ -42,28 +42,29 @@ export default function Contact() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <div className="space-y-8">
-              <div className="flex items-start gap-6 group cursor-pointer">
+              <a href={`mailto:${PERSONAL_INFO.email}`} className="flex items-start gap-6 group cursor-pointer block">
                 <div className="w-14 h-14 rounded-full glass border border-white/10 flex items-center justify-center shrink-0 text-cyan-400 group-hover:bg-cyan-500/20 group-hover:scale-110 transition-all duration-300 box-neon-glow">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="text-xl font-display font-bold mb-1 text-white">Email</h4>
-                  <a href={`mailto:${PERSONAL_INFO.email}`} className="text-slate-400 hover:text-cyan-400 transition-colors">
+                  <p className="text-slate-400 group-hover:text-cyan-400 transition-colors">
                     {PERSONAL_INFO.email}
-                  </a>
+                  </p>
                 </div>
-              </div>
-              <div className="flex items-start gap-6 group cursor-pointer">
+              </a>
+              <a href={`tel:${PERSONAL_INFO.phone}`} className="flex items-start gap-6 group cursor-pointer block">
                 <div className="w-14 h-14 rounded-full glass border border-white/10 flex items-center justify-center shrink-0 text-cyan-400 group-hover:bg-cyan-500/20 group-hover:scale-110 transition-all duration-300 box-neon-glow">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="text-xl font-display font-bold mb-1 text-white">Phone</h4>
-                  <a href={`tel:${PERSONAL_INFO.phone}`} className="text-slate-400 hover:text-cyan-400 transition-colors">
+                  <p className="text-slate-400 group-hover:text-cyan-400 transition-colors">
                     {PERSONAL_INFO.phone}
-                  </a>
+                  </p>
                 </div>
-              </div>
+              </a>
+
               <div className="flex items-start gap-6 group cursor-pointer">
                 <div className="w-14 h-14 rounded-full glass border border-white/10 flex items-center justify-center shrink-0 text-cyan-400 group-hover:bg-cyan-500/20 group-hover:scale-110 transition-all duration-300 box-neon-glow">
                   <MapPin className="w-6 h-6" />
@@ -94,14 +95,27 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             className="glass-card-premium p-10 rounded-[2.5rem] flex flex-col gap-6"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.currentTarget;
+              const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+              const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+              const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+              
+              const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+              const body = encodeURIComponent(`${message}\n\n---\nSender Email: ${email}`);
+              
+              window.location.href = `mailto:mrarnab861@gmail.com?subject=${subject}&body=${body}`;
+            }}
           >
             <div className="group">
               <label htmlFor="name" className="block text-sm font-mono tracking-wider uppercase text-slate-400 mb-2 group-focus-within:text-cyan-400 transition-colors">Full Name</label>
               <input 
                 type="text" 
                 id="name" 
-                className="w-full bg-slate-950/40 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all box-neon-glow-focus"
+                name="name"
+                required
+                className="w-full bg-slate-950/40 border border-white/10 rounded-2xl px-6 py-4 text-base text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all box-neon-glow-focus"
                 placeholder="John Doe"
               />
             </div>
@@ -110,7 +124,9 @@ export default function Contact() {
               <input 
                 type="email" 
                 id="email" 
-                className="w-full bg-slate-950/40 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all box-neon-glow-focus"
+                name="email"
+                required
+                className="w-full bg-slate-950/40 border border-white/10 rounded-2xl px-6 py-4 text-base text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all box-neon-glow-focus"
                 placeholder="john@example.com"
               />
             </div>
@@ -118,7 +134,9 @@ export default function Contact() {
               <label htmlFor="message" className="block text-sm font-mono tracking-wider uppercase text-slate-400 mb-2 group-focus-within:text-cyan-400 transition-colors">Message</label>
               <textarea 
                 id="message" 
-                className="w-full flex-1 bg-slate-950/40 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none box-neon-glow-focus min-h-[150px]"
+                name="message"
+                required
+                className="w-full flex-1 bg-slate-950/40 border border-white/10 rounded-2xl px-6 py-4 text-base text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none box-neon-glow-focus min-h-[150px]"
                 placeholder="Tell me about your project..."
               ></textarea>
             </div>
