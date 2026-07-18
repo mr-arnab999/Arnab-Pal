@@ -7,8 +7,8 @@ const Counter = ({ value, label }: { value: string, label: string }) => (
     whileHover={{ y: -5 }}
     className="p-6 rounded-2xl glass-card-premium text-center sm:text-left"
   >
-    <div className="text-4xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400 mb-2">{value}</div>
-    <div className="text-sm text-slate-400 font-mono tracking-wide uppercase">{label}</div>
+    <div className="text-4xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-indigo-400 mb-2">{value}</div>
+    <div className="text-sm text-text-muted font-mono tracking-wide uppercase">{label}</div>
   </motion.div>
 );
 
@@ -29,10 +29,10 @@ export default function About() {
           <div>
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 leading-tight">
               Building the future with AI, <br />
-              <span className="text-slate-500">one project at a time.</span>
+              <span className="text-text-muted">one project at a time.</span>
             </h2>
-            <div className="space-y-6 text-slate-400 text-base md:text-lg leading-relaxed relative break-words pr-2 md:pr-0">
-              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-500 via-indigo-500 to-transparent opacity-50" />
+            <div className="space-y-6 text-text-muted text-base md:text-lg leading-relaxed relative break-words pr-2 md:pr-0">
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent-hover via-indigo-500 to-transparent opacity-50" />
               <p className="pl-4 md:pl-6">
                 My journey into technology began with a curiosity about how software, websites, and artificial intelligence work. Today, I'm focused on learning, building, and improving my skills in AI, Python, web development, UI/UX design, and Android app development.
               </p>
@@ -44,7 +44,7 @@ export default function About() {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-12 pt-12 border-t border-border-subtle">
               <Counter value="01+" label="Years Exp." />
               <Counter value="05+" label="Projects" />
               <Counter value="01+" label="Clients" />
@@ -76,10 +76,10 @@ export default function About() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute bottom-2 right-2 sm:bottom-4 sm:right-0 md:-bottom-8 md:right-auto md:-left-12 glass-card-premium p-2.5 sm:p-3 md:p-6 rounded-xl md:rounded-2xl z-10 box-neon-glow w-[165px] min-[375px]:w-[175px] sm:w-[190px] md:w-auto"
             >
-              <div className="text-[10px] min-[375px]:text-[11px] md:text-sm font-mono text-cyan-400 mb-0.5 md:mb-1 uppercase tracking-widest font-extrabold flex items-center gap-1 md:gap-2 whitespace-nowrap">
+              <div className="text-[10px] min-[375px]:text-[11px] md:text-sm font-mono text-accent mb-0.5 md:mb-1 uppercase tracking-widest font-extrabold flex items-center gap-1 md:gap-2 whitespace-nowrap">
                 ARNAB PAL <motion.span animate={{ opacity: [1, 0.5, 1], scale: [1, 1.1, 1] }} transition={{ duration: 1.5, repeat: Infinity }}>🔥</motion.span>
               </div>
-              <div className="text-[12px] min-[375px]:text-[13px] md:text-lg font-display font-extrabold text-white flex items-center gap-1 md:gap-2 whitespace-nowrap">
+              <div className="text-[12px] min-[375px]:text-[13px] md:text-lg font-display font-extrabold text-text-main flex items-center gap-1 md:gap-2 whitespace-nowrap">
                 🚀 UI/UX Designer
               </div>
             </motion.div>

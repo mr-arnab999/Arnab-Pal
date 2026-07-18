@@ -14,8 +14,8 @@ export default function Skills() {
   const categories = Array.from(new Set(SKILLS.map(s => s.category)));
 
   return (
-    <section id="skills" className="py-24 relative bg-[#030712] overflow-hidden">
-      <div className="absolute top-[20%] right-0 w-[40rem] h-[40rem] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+    <section id="skills" className="py-24 relative bg-background overflow-hidden">
+      <div className="absolute top-[20%] right-0 w-[40rem] h-[40rem] bg-accent/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div 
@@ -38,7 +38,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate-400 text-lg max-w-2xl mx-auto"
+            className="text-text-muted text-lg max-w-2xl mx-auto"
           >
             A curated list of technologies and tools I use to build digital products.
           </motion.p>
@@ -56,29 +56,29 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="glass-card-premium p-8 rounded-[2rem] hover:-translate-y-2 hover:border-cyan-500/50 transition-all duration-300"
+                className="glass-card-premium p-8 rounded-[2rem] hover:-translate-y-2 hover:border-accent/50 transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 box-neon-glow">
+                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20 box-neon-glow">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-white">{category}</h3>
+                  <h3 className="text-2xl font-display font-bold text-text-main">{category}</h3>
                 </div>
 
                 <div className="space-y-6">
                   {categorySkills.map((skill, sIdx) => (
                     <div key={skill.name} className="group/skill">
                       <div className="flex justify-between mb-2">
-                        <span className="font-medium text-slate-300 group-hover/skill:text-cyan-400 transition-colors">{skill.name}</span>
-                        <span className="text-cyan-400/70 text-sm font-mono">{skill.level}%</span>
+                        <span className="font-medium text-text-muted group-hover/skill:text-accent transition-colors">{skill.name}</span>
+                        <span className="text-accent/70 text-sm font-mono">{skill.level}%</span>
                       </div>
-                      <div className="w-full h-1.5 bg-slate-800/50 rounded-full overflow-hidden border border-white/5">
+                      <div className="w-full h-1.5 bg-surface/50 rounded-full overflow-hidden border border-border-subtle">
                         <motion.div 
                           initial={{ scaleX: 0 }}
                           whileInView={{ scaleX: skill.level / 100 }}
                           viewport={{ once: true }}
                           transition={{ duration: 1, delay: 0.2 + (sIdx * 0.1), ease: "easeOut" }}
-                          className="h-full bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full relative origin-left will-change-transform"
+                          className="h-full bg-gradient-to-r from-accent-hover to-indigo-500 rounded-full relative origin-left will-change-transform"
                           style={{ width: '100%' }}
                         >
                           <div className="absolute top-0 right-0 w-2 h-full bg-white blur-[2px] rounded-full animate-pulse"></div>

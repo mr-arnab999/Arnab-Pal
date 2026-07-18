@@ -3,6 +3,7 @@ import { Menu, X, Github } from 'lucide-react';
 import { LinkedinColorful, TwitterColorful } from './SocialIcons';
 import { useState, useEffect } from 'react';
 import { PERSONAL_INFO } from '../data';
+import ThemeToggle from './ThemeToggle';
 
 const NAV_LINKS = [
   { name: 'About', href: '#about' },
@@ -54,8 +55,8 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-          <a href="#" className="font-display font-bold text-2xl tracking-tighter text-white">
-            My Portfolio<span className="text-cyan-400">.</span>
+          <a href="#" className="font-display font-bold text-2xl tracking-tighter text-text-main">
+            My Portfolio<span className="text-accent">.</span>
           </a>
 
           {/* Desktop Nav */}
@@ -65,7 +66,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                  className="text-sm font-medium text-text-muted hover:text-text-main transition-colors"
                 >
                   {link.name}
                 </a>
@@ -75,18 +76,23 @@ export default function Navbar() {
             <div className="h-4 w-[1px] bg-white/20"></div>
 
             <div className="flex items-center gap-4">
-              <a href={PERSONAL_INFO.github} className="hover:scale-110 transition-transform text-slate-400 hover:text-white"><Github className="w-5 h-5" /></a>
-              <a href={PERSONAL_INFO.linkedin} className="hover:scale-110 transition-transform"><LinkedinColorful className="w-5 h-5" /></a>
+              <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-text-muted hover:text-text-main"><Github className="w-5 h-5" /></a>
+              <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform"><LinkedinColorful className="w-5 h-5" /></a>
+              <div className="h-4 w-[1px] bg-border-subtle mx-2"></div>
+              <ThemeToggle />
             </div>
           </div>
 
-          {/* Mobile Toggle */}
-          <button 
-            className="md:hidden text-slate-300 hover:text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Toggle & Theme */}
+          <div className="flex md:hidden items-center gap-4">
+            <ThemeToggle />
+            <button 
+              className="text-text-muted hover:text-text-main"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 
@@ -105,15 +111,15 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-slate-200 hover:text-white"
+                  className="text-lg font-medium text-text-main hover:text-text-main"
                 >
                   {link.name}
                 </a>
               ))}
               <div className="flex justify-center gap-6 mt-8">
-                <a href={PERSONAL_INFO.github} className="hover:scale-110 transition-transform text-slate-400 hover:text-white"><Github className="w-6 h-6" /></a>
-                <a href={PERSONAL_INFO.linkedin} className="hover:scale-110 transition-transform"><LinkedinColorful className="w-6 h-6" /></a>
-                <a href={PERSONAL_INFO.twitter} className="hover:scale-110 transition-transform"><TwitterColorful className="w-6 h-6" /></a>
+                <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-text-muted hover:text-text-main"><Github className="w-6 h-6" /></a>
+                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform"><LinkedinColorful className="w-6 h-6" /></a>
+                <a href={PERSONAL_INFO.twitter} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform"><TwitterColorful className="w-6 h-6" /></a>
               </div>
             </div>
           </motion.div>

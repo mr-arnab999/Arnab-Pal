@@ -60,17 +60,17 @@ export default function App() {
         {isLoading && <Loader key="loader" onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
 
-      <div className="relative w-full overflow-hidden bg-[#030712]">
+      <div className="relative w-full overflow-hidden bg-background">
         {/* Global Background Effects */}
         <div className="fixed inset-0 pointer-events-none z-[-1] will-change-transform">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(6,182,212,0.05)_0%,_rgba(0,0,0,0)_50%)]" />
-          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[radial-gradient(circle_at_50%_0%,_rgba(139,92,246,0.05)_0%,_rgba(0,0,0,0)_50%)]" />
+          <div className="absolute inset-0 bg-radial-glow" />
+          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-radial-accent" />
         </div>
 
         <Navbar />
         <main>
           <Hero />
-          <Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-slate-500">Loading...</div>}>
+          <Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-text-muted">Loading...</div>}>
             <About />
             <Skills />
             <Experience />

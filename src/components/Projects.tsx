@@ -57,7 +57,7 @@ const TiltCard = ({ children, className }: { children: React.ReactNode, classNam
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 relative bg-[#030712]">
+    <section id="projects" className="py-24 relative bg-background">
       <motion.div 
         initial={{ opacity: 0, y: 150 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate-400 text-lg max-w-2xl mx-auto"
+            className="text-text-muted text-lg max-w-2xl mx-auto"
           >
             Some of the projects I've built that showcase my passion for clean code and exceptional design.
           </motion.p>
@@ -95,8 +95,8 @@ export default function Projects() {
               transition={{ delay: idx * 0.1 }}
             >
               <TiltCard className="group rounded-3xl h-full glass-card-premium">
-                <div className="relative aspect-video overflow-hidden rounded-t-3xl border-b border-white/5">
-                  <div className="absolute inset-0 bg-slate-950/40 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                <div className="relative aspect-video overflow-hidden rounded-t-3xl border-b border-border-subtle">
+                  <div className="absolute inset-0 bg-surface/40 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
                   <img 
                     src={project.image} 
                     alt={project.title}
@@ -107,13 +107,17 @@ export default function Projects() {
                   <div className="absolute top-4 right-4 z-20 flex gap-2 md:translate-y-[-150%] md:group-hover:translate-y-0 transition-transform duration-500 ease-out">
                     <a 
                       href={project.github}
-                      className="w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:scale-110 hover:bg-slate-800 transition-all box-neon-glow"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full glass flex items-center justify-center text-text-main hover:scale-110 hover:bg-surface transition-all box-neon-glow"
                     >
                       <Github className="w-5 h-5" />
                     </a>
                     <a 
                       href={project.demo}
-                      className="w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:bg-cyan-500 hover:text-slate-950 transition-colors box-neon-glow"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full glass flex items-center justify-center text-text-main hover:bg-accent-hover hover:text-surface transition-colors box-neon-glow"
                     >
                       <ExternalLink className="w-5 h-5" />
                     </a>
@@ -121,18 +125,18 @@ export default function Projects() {
                 </div>
                 
                 <div className="p-8">
-                  <div className="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-3">
+                  <div className="text-accent text-xs font-bold tracking-widest uppercase mb-3">
                     {project.category}
                   </div>
-                  <h3 className="text-2xl font-display font-bold mb-3 text-white group-hover:text-cyan-300 transition-colors">{project.title}</h3>
-                  <p className="text-slate-400 mb-6 line-clamp-2">
+                  <h3 className="text-2xl font-display font-bold mb-3 text-text-main group-hover:text-accent transition-colors">{project.title}</h3>
+                  <p className="text-text-muted mb-6">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
                       <span 
                         key={tag}
-                        className="px-3 py-1 text-xs font-mono text-cyan-100 bg-cyan-900/30 border border-cyan-500/20 rounded-full"
+                        className="px-3 py-1 text-xs font-mono text-text-main bg-accent/20 border border-accent/20 rounded-full"
                       >
                         {tag}
                       </span>

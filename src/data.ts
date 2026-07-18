@@ -7,7 +7,7 @@ export const PERSONAL_INFO = {
   email: "mrarnab861@gmail.com",
   phone: "+918167402376",
   location: "Bankura",
-  github: "https://github.com/arnab-git282",
+  github: "https://github.com/mr-arnab999",
   linkedin: "https://www.linkedin.com/in/arnab-pal-5b3bb141b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   twitter: "https://x.com/arnab13377",
 };
@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     description: "A comprehensive digital library management system for tracking books, managing members, and streamlining the borrowing process with an intuitive interface.",
     image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=1000",
     tags: ["React", "Node.js", "PostgreSQL", "Tailwind"],
-    github: "#",
+    github: "https://github.com/mr-arnab999",
     demo: "https://drive.google.com/drive/folders/1npYgqyA_JuH6eSvWaGwZl2OO0XlxM8Y7",
     category: "Web"
   },
@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
     description: "Manage the online coffee shop. A complete e-commerce platform with menu browsing, online ordering, and order management.",
     image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=1000",
     tags: ["Python", "Django", "Tailwind CSS"],
-    github: "#",
+    github: "https://github.com/mr-arnab999",
     demo: "#",
     category: "Web"
   },
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     description: "A machine learning project for diabetes prediction. It helps identify risks related to blood sugar issues and potential diabetes based on patient medical data.",
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1000",
     tags: ["Python", "Machine Learning", "Scikit-Learn"],
-    github: "#",
+    github: "https://github.com/mr-arnab999",
     demo: "#",
     category: "Machine Learning"
   },
@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
     description: "A real-time weather forecasting application providing current conditions, accurate forecasts, and interactive weather maps.",
     image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&q=80&w=1000",
     tags: ["React", "API Integration", "Tailwind CSS"],
-    github: "#",
+    github: "https://github.com/mr-arnab999",
     demo: "#",
     category: "Web"
   }

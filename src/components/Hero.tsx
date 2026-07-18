@@ -9,7 +9,7 @@ const FloatingParticles = () => {
       {[...Array(30)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full box-neon-glow will-change-transform"
+          className="absolute w-1 h-1 bg-accent rounded-full box-neon-glow will-change-transform"
           initial={{
             x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
             y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
@@ -40,7 +40,7 @@ export default function Hero() {
         <motion.div 
           animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[10%] left-[5%] w-[40rem] h-[40rem] bg-cyan-600/10 rounded-full blur-[120px] will-change-transform" 
+          className="absolute top-[10%] left-[5%] w-[40rem] h-[40rem] bg-accent/10 rounded-full blur-[120px] will-change-transform" 
         />
         <motion.div 
           animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
@@ -61,7 +61,7 @@ export default function Hero() {
         >
           {/* Smooth animated background circle behind the main content */}
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] md:w-[50rem] md:h-[50rem] bg-cyan-500/20 rounded-full blur-[100px] pointer-events-none -z-10 will-change-transform"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] md:w-[50rem] md:h-[50rem] bg-accent/20 rounded-full blur-[100px] pointer-events-none -z-10 will-change-transform"
             animate={{ 
               scale: [1, 1.2, 1],
               opacity: [0.4, 0.7, 0.4]
@@ -77,7 +77,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 text-sm font-medium text-slate-300 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-border-subtle text-sm font-medium text-text-muted mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             Open to Internships & Freelance
@@ -98,7 +98,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-text-muted mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             Building Modern Web Experiences with AI & Learning Full-Stack Development.
           </motion.p>
@@ -111,7 +111,7 @@ export default function Hero() {
           >
             <a 
               href="#projects" 
-              className="group relative flex items-center gap-2 bg-cyan-500 text-slate-950 px-6 py-3 text-sm rounded-full font-bold hover:bg-cyan-400 transition-all w-full sm:w-auto justify-center box-neon-glow overflow-hidden"
+              className="group relative flex items-center gap-2 bg-accent-hover text-surface px-6 py-3 text-sm rounded-full font-bold hover:bg-accent transition-all w-full sm:w-auto justify-center box-neon-glow overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative z-10">View Projects</span>
@@ -119,9 +119,9 @@ export default function Hero() {
             </a>
             <a 
               href="/resume.pdf" 
-              className="group flex items-center gap-2 glass px-6 py-3 text-sm rounded-full font-medium text-white hover:border-cyan-500/50 hover:bg-cyan-900/20 transition-all w-full sm:w-auto justify-center overflow-hidden relative"
+              className="group flex items-center gap-2 glass px-6 py-3 text-sm rounded-full font-medium text-text-main hover:border-accent/50 hover:bg-accent/20 transition-all w-full sm:w-auto justify-center overflow-hidden relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-indigo-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-hover/10 to-indigo-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <Download className="w-4 h-4 relative z-10 group-hover:-translate-y-1 transition-transform" />
               <span className="relative z-10">Download CV</span>
             </a>
@@ -136,11 +136,11 @@ export default function Hero() {
         transition={{ delay: 1, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-xs text-slate-500 uppercase tracking-widest">Scroll</span>
+        <span className="text-xs text-text-muted uppercase tracking-widest">Scroll</span>
         <motion.div 
           animate={{ scaleY: [0, 1, 0], y: [0, 0, 48] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-[1px] h-12 bg-gradient-to-b from-cyan-500 to-transparent origin-top will-change-transform"
+          className="w-[1px] h-12 bg-gradient-to-b from-accent-hover to-transparent origin-top will-change-transform"
         />
       </motion.div>
     </section>
