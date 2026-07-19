@@ -1,3 +1,5 @@
+#!/bin/bash
+cat << 'CSS' > src/index.css
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
@@ -314,99 +316,4 @@ html.lenis, html.lenis body {
   right: -5vw;
   animation-delay: -2s;
 }
-
-
-@keyframes sparkle {
-  0% { 
-    background-position: 200% center;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-  }
-  100% { 
-    background-position: 0% center;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-  }
-}
-
-.text-sparkle {
-  display: inline-block;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(
-    90deg,
-    #64748b 0%,
-    #cbd5e1 25%,
-    #f8fafc 50%,
-    #cbd5e1 75%,
-    #64748b 100%
-  );
-  background-size: 200% auto;
-  animation: sparkle 3s linear infinite;
-  will-change: background-position, text-shadow;
-}
-
-.dark .text-sparkle {
-  background-image: linear-gradient(
-    90deg,
-    #94a3b8 0%,
-    #e2e8f0 25%,
-    #ffffff 50%,
-    #e2e8f0 75%,
-    #94a3b8 100%
-  );
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .text-sparkle {
-    animation: none;
-    background-position: 0% center;
-  }
-}
-
-/* Premium Name Animation */
-.premium-name-animation {
-  display: inline-block;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #00d4ff 25%,
-    #3b82f6 50%,
-    #8b5cf6 75%,
-    #ffffff 100%
-  );
-  background-size: 200% auto;
-  animation: nameSweep 5s linear infinite, namePulse 4s ease-in-out infinite;
-  will-change: background-position, transform, text-shadow;
-}
-
-@keyframes nameSweep {
-  0% {
-    background-position: 200% center;
-  }
-  100% {
-    background-position: 0% center;
-  }
-}
-
-@keyframes namePulse {
-  0%, 100% {
-    transform: scale(1);
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
-  }
-  50% {
-    transform: scale(1.01);
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 35px rgba(59, 130, 246, 0.4);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .premium-name-animation {
-    animation: none;
-    background-position: 0% center;
-    transform: none;
-    text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-  }
-}
+CSS

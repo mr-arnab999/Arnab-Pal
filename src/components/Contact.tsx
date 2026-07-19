@@ -142,7 +142,7 @@ export default function Contact() {
             </div>
             <button 
               type="submit"
-              className="group relative mt-2 flex items-center justify-center gap-2 bg-accent-hover text-surface px-8 py-5 rounded-2xl font-bold transition-all hover:bg-accent box-neon-glow overflow-hidden"
+              className="group relative mt-2 flex items-center justify-center gap-2 bg-accent-hover text-surface px-8 py-5 rounded-2xl font-bold transition-all hover:bg-accent box-neon-glow hover:-translate-y-1 hover:shadow-lg overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative z-10">Send Message</span>

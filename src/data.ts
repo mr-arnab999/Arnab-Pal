@@ -1,3 +1,4 @@
+import portfolioImage from "./assets/images/regenerated_image_1784448355548.png";
 import { ExperienceItem, Project, Service, Skill } from "./types";
 
 export const PERSONAL_INFO = {
@@ -13,15 +14,18 @@ export const PERSONAL_INFO = {
 };
 
 export const SKILLS: Skill[] = [
-  { name: "Html/Css", level: 95, category: "Web Development" },
-  { name: "TypeScript", level: 90, category: "Web Development" },
+  { name: "HTML&CSS", level: 95, category: "Web Development" },
+  { name: "TypeScript", level: 60, category: "Web Development" },
   { name: "Stitch", level: 95, category: "UI/UX" },
-  { name: "Node.js", level: 85, category: "Web Development" },
-  { name: "Python", level: 90, category: "AI & ML" },
-  { name: "TensorFlow / PyTorch", level: 80, category: "AI & ML" },
-  { name: "SQL", level: 85, category: "Databases" },
-  { name: "AWS / GCP", level: 75, category: "Cloud" },
+  { name: "Node.js", level: 50, category: "Web Development" },
+  { name: "Python", level: 50, category: "AI & ML" },
+  { name: "NumPy(Basic)", level: 45, category: "AI & ML" },
+  { name: "ChatGPT", level: 95, category: "AI Tools" },
+  { name: "Perplexity", level: 90, category: "AI Tools" },
+  { name: "Claude AI", level: 85, category: "AI Tools" },
+  { name: "Google AI Studio", level: 95, category: "AI Tools" },
   { name: "Figma", level: 80, category: "UI/UX" },
+  { name: "Canva", level: 85, category: "UI/UX" },
 ];
 
 export const EXPERIENCE: ExperienceItem[] = [
@@ -29,7 +33,19 @@ export const EXPERIENCE: ExperienceItem[] = [
     title: "Diploma-Computer Science and Technology",
     company: "Sir Rajendra Nath Mukherjee Government Polytechnic",
     date: "2023 - 2026",
-    description: "CGPA 8.2",
+    description: "CGPA: 8.2",
+    performance: {
+      title: "Semester Performance",
+      overall: "8.2",
+      semesters: [
+        { name: "Semester 1", gpa: "8.0" },
+        { name: "Semester 2", gpa: "9.0" },
+        { name: "Semester 3", gpa: "8.4" },
+        { name: "Semester 4", gpa: "8.8" },
+        { name: "Semester 5", gpa: "7.6" },
+        { name: "Semester 6", gpa: "Pursuing" }
+      ]
+    },
     type: "education",
     link: "https://www.google.com/maps/place/Sir+Rajendra+Nath+Mukherjee+govt.+Polytechnic+(Basirhat+Govt.+Polytechnic+College)/@22.650491,88.8499476,17z/data=!4m14!1m7!3m6!1s0x39ff55c586aebcf7:0x974aabb4007664d0!2sSir+Rajendra+Nath+Mukherjee+govt.+Polytechnic+(Basirhat+Govt.+Polytechnic+College)!8m2!3d22.650491!4d88.8525225!16s%2Fg%2F11df0lvqcq!3m5!1s0x39ff55c586aebcf7:0x974aabb4007664d0!8m2!3d22.650491!4d88.8525225!16s%2Fg%2F11df0lvqcq?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
   },
@@ -84,6 +100,15 @@ export const PROJECTS: Project[] = [
     description: "A real-time weather forecasting application providing current conditions, accurate forecasts, and interactive weather maps.",
     image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&q=80&w=1000",
     tags: ["React", "API Integration", "Tailwind CSS"],
+    github: "https://github.com/mr-arnab999",
+    demo: "#",
+    category: "Web"
+  },
+  {
+    title: "Personal Portfolio",
+    description: "A modern, highly responsive personal portfolio website built to showcase my skills, experience, and projects.",
+    image: portfolioImage,
+    tags: ["React", "HTML & CSS", "AI Tools"],
     github: "https://github.com/mr-arnab999",
     demo: "#",
     category: "Web"

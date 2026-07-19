@@ -23,6 +23,11 @@ export interface ExperienceItem {
   description: string;
   type: 'work' | 'education';
   link?: string;
+  performance?: {
+    title: string;
+    overall: string;
+    semesters: { name: string; gpa: string }[];
+  };
 }
 
 export interface Service {

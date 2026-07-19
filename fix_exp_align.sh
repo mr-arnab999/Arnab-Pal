@@ -1,0 +1,1 @@
+sed -i 's/<button/<button\n                className={`flex items-center gap-2 text-sparkle leading-relaxed text-sm font-bold cursor-pointer hover:opacity-80 transition-opacity ${idx % 2 === 0 ? "md:ml-auto md:flex-row-reverse" : ""}`}/g' src/components/Experience.tsx

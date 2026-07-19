@@ -48,7 +48,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background overflow-hidden"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background/80 backdrop-blur-md overflow-hidden"
     >
       {/* Cyan Flash at 100% */}
       <AnimatePresence>
@@ -133,7 +133,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
           
           <div className="w-full h-[2px] bg-surface rounded-full overflow-hidden relative">
             <motion.div
-              className="absolute top-0 left-0 h-full bg-gradient-to-r from-accent via-accent to-accent shadow-[0_0_10px_var(--glow)]"
+              className="absolute top-0 left-0 h-full bg-gradient-to-r from-accent to-accent-hover shadow-[0_0_10px_var(--glow)]"
               style={{ width: `${progress}%` }}
               transition={{ duration: 0.1 }}
             >

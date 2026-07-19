@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { SKILLS } from '../data';
-import { Code2, Cpu, Database, Layout, Server, Brain } from 'lucide-react';
+import { Code2, Cpu, Database, Layout, Server, Brain, Sparkles } from 'lucide-react';
 
 const categoryIcons: Record<string, any> = {
   "Web Development": Code2,
@@ -8,6 +8,7 @@ const categoryIcons: Record<string, any> = {
   "AI & ML": Brain,
   "Databases": Database,
   "Cloud": Server,
+  "AI Tools": Sparkles,
 };
 
 export default function Skills() {
@@ -78,7 +79,7 @@ export default function Skills() {
                           whileInView={{ scaleX: skill.level / 100 }}
                           viewport={{ once: true }}
                           transition={{ duration: 1, delay: 0.2 + (sIdx * 0.1), ease: "easeOut" }}
-                          className="h-full bg-gradient-to-r from-accent-hover to-indigo-500 rounded-full relative origin-left will-change-transform"
+                          className="h-full bg-gradient-to-r from-accent to-accent-hover rounded-full relative origin-left will-change-transform"
                           style={{ width: '100%' }}
                         >
                           <div className="absolute top-0 right-0 w-2 h-full bg-white blur-[2px] rounded-full animate-pulse"></div>

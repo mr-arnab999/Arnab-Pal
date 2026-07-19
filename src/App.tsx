@@ -9,6 +9,7 @@ import Lenis from "@studio-freight/lenis";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Loader from "./components/Loader";
+import BackgroundShapes from "./components/BackgroundShapes";
 
 const About = lazy(() => import("./components/About"));
 const Skills = lazy(() => import("./components/Skills"));
@@ -60,12 +61,20 @@ export default function App() {
         {isLoading && <Loader key="loader" onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
 
-      <div className="relative w-full overflow-hidden bg-background">
+      <div className="relative w-full overflow-hidden">
         {/* Global Background Effects */}
         <div className="fixed inset-0 pointer-events-none z-[-1] will-change-transform">
           <div className="absolute inset-0 bg-radial-glow" />
           <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-radial-accent" />
         </div>
+        
+        {/* Light Theme Blobs */}
+        <div className="light-blobs">
+          <div className="blob blob-1"></div>
+          <div className="blob blob-2"></div>
+        </div>
+
+        <BackgroundShapes />
 
         <Navbar />
         <main>

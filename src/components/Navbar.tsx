@@ -39,8 +39,20 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = '';
     }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
     return () => {
       document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isMobileMenuOpen]);
 
@@ -100,28 +112,62 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 glass-card pt-24 px-6 md:hidden flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[60] md:hidden flex items-center justify-center p-4"
+            style={{ backgroundColor: 'rgba(5, 10, 25, 0.75)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
+            onClick={() => setIsMobileMenuOpen(false)}
           >
-            <div className="flex flex-col gap-6 text-center">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-text-main hover:text-text-main"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <div className="flex justify-center gap-6 mt-8">
-                <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform text-text-muted hover:text-text-main"><Github className="w-6 h-6" /></a>
-                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform"><LinkedinColorful className="w-6 h-6" /></a>
-                <a href={PERSONAL_INFO.twitter} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform"><TwitterColorful className="w-6 h-6" /></a>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col items-center py-8 px-6 w-[85vw] max-w-[340px] rounded-[28px] relative"
+              style={{
+                backgroundColor: 'rgba(15, 23, 42, 0.55)',
+                backdropFilter: 'blur(24px)',
+                WebkitBackdropFilter: 'blur(24px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                boxShadow: '0 8px 32px rgba(34, 211, 238, 0.15)'
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute top-4 right-4 z-[70] cursor-pointer flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 hover:rotate-90 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white"
+                style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(10px)' }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsMobileMenuOpen(false);
+                }}
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6 pointer-events-none" />
+              </button>
+
+              <div className="flex flex-col gap-[18px] text-center w-full mt-4">
+                {NAV_LINKS.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-[24px] font-semibold text-white/90 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300 py-1"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+                
+                <div className="h-[1px] w-full bg-white/10 my-2"></div>
+
+                <div className="flex justify-center gap-6">
+                  <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all text-white/80 hover:text-white"><Github className="w-6 h-6" /></a>
+                  <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all"><LinkedinColorful className="w-6 h-6" /></a>
+                  <a href={PERSONAL_INFO.twitter} target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all"><TwitterColorful className="w-6 h-6" /></a>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

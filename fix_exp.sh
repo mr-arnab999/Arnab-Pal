@@ -1,3 +1,4 @@
+cat << 'TSX' > src/components/Experience.tsx
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { EXPERIENCE } from '../data';
@@ -42,9 +43,9 @@ function ExperienceItemCard({ item, idx }: { item: ExperienceItem; idx: number }
           
           {item.performance ? (
             <div className="mt-2">
-              <button
-                className={`flex items-center gap-2 text-sparkle leading-relaxed text-sm font-bold cursor-pointer hover:opacity-80 transition-opacity ${idx % 2 === 0 ? "md:ml-auto md:flex-row-reverse" : ""}`} 
+              <button 
                 onClick={() => setIsExpanded(!isExpanded)}
+                className="flex items-center gap-2 text-sparkle leading-relaxed text-sm font-bold cursor-pointer hover:opacity-80 transition-opacity"
               >
                 {item.description}
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
@@ -134,3 +135,4 @@ export default function Experience() {
     </section>
   );
 }
+TSX

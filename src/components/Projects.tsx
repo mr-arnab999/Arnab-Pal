@@ -94,7 +94,7 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
             >
-              <TiltCard className="group rounded-3xl h-full glass-card-premium">
+              <TiltCard className="group rounded-3xl h-full glass-card-premium hover:-translate-y-2">
                 <div className="relative aspect-video overflow-hidden rounded-t-3xl border-b border-border-subtle">
                   <div className="absolute inset-0 bg-surface/40 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
                   <img 

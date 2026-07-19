@@ -89,7 +89,7 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-8 leading-tight"
           >
-            Hi, I'm Arnab Pal. <br className="hidden md:block" />
+            Hi, I'm <span className="premium-name-animation">Arnab Pal</span>. <br className="hidden md:block" />
             I Build Modern Websites & <br className="hidden md:block" />
             <span className="text-gradient">AI-Powered Applications.</span>
           </motion.h1>
@@ -111,7 +111,7 @@ export default function Hero() {
           >
             <a 
               href="#projects" 
-              className="group relative flex items-center gap-2 bg-accent-hover text-surface px-6 py-3 text-sm rounded-full font-bold hover:bg-accent transition-all w-full sm:w-auto justify-center box-neon-glow overflow-hidden"
+              className="group relative flex items-center gap-2 bg-accent-hover text-surface px-6 py-3 text-sm rounded-full font-bold hover:bg-accent transition-all hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto justify-center box-neon-glow overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative z-10">View Projects</span>
@@ -119,7 +119,7 @@ export default function Hero() {
             </a>
             <a 
               href="/resume.pdf" 
-              className="group flex items-center gap-2 glass px-6 py-3 text-sm rounded-full font-medium text-text-main hover:border-accent/50 hover:bg-accent/20 transition-all w-full sm:w-auto justify-center overflow-hidden relative"
+              className="group flex items-center gap-2 glass px-6 py-3 text-sm rounded-full font-medium text-text-main hover:border-accent/50 hover:bg-accent/20 transition-all hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto justify-center overflow-hidden relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-accent-hover/10 to-indigo-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <Download className="w-4 h-4 relative z-10 group-hover:-translate-y-1 transition-transform" />

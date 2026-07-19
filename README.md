@@ -1,31 +1,20 @@
-# 👋 Hi, I'm Arnab Pal
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-## Computer Science & Technology Student
+# Run and deploy your AI Studio app
 
-Welcome to my Personal Portfolio Repository.
+This contains everything you need to run your app locally.
 
-### 🚀 About Me
-I am a Computer Science & Technology student passionate about Full Stack Development, Artificial Intelligence, and Software Development. I enjoy building modern, responsive, and user-friendly web applications.
+View your app in AI Studio: https://ai.studio/apps/2ed8fa42-d293-4322-9d95-67d22f6c5beb
 
-### 💻 Skills
-- HTML
-- CSS
-- JavaScript
-- TypeScript
-- React
-- Vite
-- Python
-- Git & GitHub
+## Run Locally
 
-### 📂 Project
-Premium Personal Portfolio Website
+**Prerequisites:**  Node.js
 
-### 📍 Location
-Bankura, West Bengal, India
 
-### 📫 Connect with Me
-- GitHub: https://github.com/mr-arnab999
-- LinkedIn: https://www.linkedin.com/in/arnab-pal-5b3bb141b?utm_source=share_via&utm_content=profile&utm_medium=member_android)
-- Email:mrarnab861@gmail.com
----
-⭐ Thank you for visiting my repository!
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
