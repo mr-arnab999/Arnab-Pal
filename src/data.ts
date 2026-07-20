@@ -33,17 +33,17 @@ export const EXPERIENCE: ExperienceItem[] = [
     title: "Diploma-Computer Science and Technology",
     company: "Sir Rajendra Nath Mukherjee Government Polytechnic",
     date: "2023 - 2026",
-    description: "CGPA: 8.2",
+    description: "CGPA: 8.1",
     performance: {
       title: "Semester Performance",
-      overall: "8.2",
+      overall: "8.1",
       semesters: [
         { name: "Semester 1", gpa: "8.0" },
         { name: "Semester 2", gpa: "9.0" },
         { name: "Semester 3", gpa: "8.4" },
         { name: "Semester 4", gpa: "8.8" },
         { name: "Semester 5", gpa: "7.6" },
-        { name: "Semester 6", gpa: "Pursuing" }
+        { name: "Semester 6", gpa: "7.1" }
       ]
     },
     type: "education",

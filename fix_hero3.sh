@@ -1,3 +1,4 @@
+cat << 'TSX' > src/components/Hero.tsx
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'motion/react';
 import { ArrowRight, Download } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -190,3 +191,4 @@ export default function Hero() {
     </section>
   );
 }
+TSX

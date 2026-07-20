@@ -1,3 +1,4 @@
+cat << 'TSX' > src/components/Experience.tsx
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { EXPERIENCE } from '../data';
@@ -135,3 +136,4 @@ export default function Experience() {
     </section>
   );
 }
+TSX

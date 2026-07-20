@@ -9,7 +9,7 @@ const TechCore = () => {
   const ringRef2 = useRef<THREE.Group>(null);
 
   useFrame((state) => {
-    const t = state.clock.elapsedTime;
+    const t = state.clock.elapsedTime * 0.4;
     if (coreRef.current) {
       coreRef.current.rotation.x = t * 0.2;
       coreRef.current.rotation.y = t * 0.3;
@@ -29,8 +29,9 @@ const TechCore = () => {
       {/* Central Data Core */}
       <Float speed={2} rotationIntensity={1} floatIntensity={1}>
         <Icosahedron args={[1.5, 1]} ref={coreRef}>
-          <meshStandardMaterial color="#06b6d4" wireframe opacity={0.3} transparent />
+          <meshStandardMaterial color="#06b6d4" wireframe opacity={0.25} transparent />
         </Icosahedron>
+        
         {/* Inner solid brain */}
         <Sphere args={[0.8, 32, 32]}>
           <MeshDistortMaterial
@@ -84,7 +85,7 @@ const TechCore = () => {
 
 export default function Hero3D() {
   return (
-    <div className="absolute inset-0 z-0 opacity-50 pointer-events-none mix-blend-screen will-change-transform">
+    <div className="absolute inset-0 z-0 opacity-25 pointer-events-none mix-blend-screen will-change-transform">
       <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 1.5]} performance={{ min: 0.5 }}>
         <fog attach="fog" args={['#030712', 5, 15]} />
         <ambientLight intensity={0.5} />
